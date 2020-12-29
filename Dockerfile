@@ -44,7 +44,7 @@ RUN chown -R appuser:appuser /app
 # RUN groupmod -g 999 appuser
 
 # Switching to a non-root user, please refer to https://aka.ms/vscode-docker-python-user-rights
-USER appuser:appuser
+USER appuser
 
 # Run app in /app/music to save export ./mix_{}.wav to local file
 WORKDIR /app/music
