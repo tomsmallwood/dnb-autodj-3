@@ -41,7 +41,7 @@ RUN addgroup --gid 1000 appuser && \
 RUN chown -R appuser:appuser /app
 
 # HARD-CODED! Create group using host's guid (required for VirtualBox shared folders owned by vboxsf group)
-RUN groupmod -g 999 appuser
+# RUN groupmod -g 999 appuser
 
 # Switching to a non-root user, please refer to https://aka.ms/vscode-docker-python-user-rights
 USER appuser:appuser
