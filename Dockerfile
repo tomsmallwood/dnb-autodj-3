@@ -31,11 +31,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN python3.6 -m pip install -U --upgrade pip
 RUN python3.6 -m pip install -U --upgrade setuptools wheel
 
-# Install dnb-autodj pip requirements
-COPY requirements.txt .
-RUN python3.6 -m pip install -U -r requirements.txt
-
-# Install dnb-autodj
+# Install dnb-autodj and pip requirements
 WORKDIR /app
 COPY . /app
 RUN python3.6 -m pip install -U ./

@@ -15,7 +15,7 @@ setup(
         'librosa==0.5.0',
         'numpy==1.12.1',
         'pyAudio==0.2.8',
-        'scikit-learn==0.20.3',
+        'scikit-learn==0.20.3',  # scikit-learn==0.18.1
         'scipy==0.19.0',
         'yodel==0.3.0',
         'llvmlite==0.32.1',
