@@ -170,7 +170,7 @@ class DjController:
 		while not self.queue.empty():
 			self.queue.get_nowait()
 		# Wait for current song stream to end
-		while stream.is_active():
+		while self.stream.is_active():
 			time.sleep(0.1)
 		
 		self.stop()
