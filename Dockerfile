@@ -41,7 +41,7 @@ RUN addgroup --gid 1000 appuser && \
 RUN chown -R appuser:appuser /app
 
 # HARD-CODED!
-RUN groupmod -g 999 appuser
+RUN usermod -a --gid 999 appuser
 
 # Switching to a non-root user, please refer to https://aka.ms/vscode-docker-python-user-rights
 USER appuser:appuser
