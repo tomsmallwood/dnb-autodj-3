@@ -9,7 +9,6 @@ ENV PYTHONUNBUFFERED=1
 # Install apt
 RUN apt update
 RUN apt install -y software-properties-common
-# RUN apt install -y libasound-dev portaudio19-dev libportaudio2 libportaudiocpp0 ffmpeg libav-tools
 RUN add-apt-repository ppa:deadsnakes/ppa
 
 # Install apt-get requirements
