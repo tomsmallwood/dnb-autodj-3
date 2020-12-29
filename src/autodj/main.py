@@ -112,6 +112,9 @@ if __name__ == '__main__':
 		elif cmd == 'stereo':
 			dj.stereo = not dj.stereo
 			logger.info(f'Stereo audio is {"enabled" if dj.stereo else "disabled"}.')
+		elif cmd == 'end':
+			dj.end()
+			logger.info('Stopping playback after current song!')
 		else:
 			logger.info('The command ' + cmd + ' does not exist!')
 		

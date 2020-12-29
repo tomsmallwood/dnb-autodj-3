@@ -158,6 +158,22 @@ class DjController:
 		if not self.pyaudio is None:
 			self.pyaudio.terminate()
 		self.pyaudio = None
+
+	
+	def end(self):
+		# If paused, then continue playing (deadlock prevention)
+		try:
+			self.playEvent.set()
+		except Exception as e:
+			logger.debug(e)
+		# Empty the queue so the dj thread can terminate
+		while not self.queue.empty():
+			self.queue.get_nowait()
+		# Wait for current song stream to end
+		while stream.is_active():
+			time.sleep(0.1)
+		
+		self.stop()
 			
 	def _audio_play_loop(self, playEvent, isPlaying, currentMasterString):
 		
