@@ -30,15 +30,14 @@ RUN rm -rf /var/lib/apt/lists/*
 # Upgrade pip and install setuptools
 RUN python3.6 -m pip install -U --upgrade pip
 RUN python3.6 -m pip install -U --upgrade setuptools wheel
-RUN python3.6 -m pip install -U llvmlite==0.32.1
 
 # Install dnb-autodj pip requirements
 COPY requirements.txt .
 RUN python3.6 -m pip install -U -r requirements.txt
 
 # Install dnb-autodj
-COPY . /app
 WORKDIR /app
+COPY . /app
 RUN python3.6 -m pip install -U ./
 
 # Configuring non-root user

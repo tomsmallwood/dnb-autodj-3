@@ -8,3 +8,4 @@ pyAudio==0.2.8
 scikit-learn==0.18.1
 scipy==0.19.0
 yodel==0.3.0
+llvmlite==0.32.1
