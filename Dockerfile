@@ -40,8 +40,8 @@ RUN addgroup --gid 1000 appuser && \
   adduser --uid 1000 --ingroup appuser --home /home/appuser --shell /bin/sh --disabled-password --gecos "" appuser
 RUN chown -R appuser:appuser /app
 
-# HARD-CODED! Create group using host's guid (required for VirtualBox shared folders owned by vboxsf group)
-RUN groupmod -g 999 volume
+# HARD-CODED! Create group using host's guid (required for VirtualBox shared folders owned by group 999(vboxsf))
+RUN groupadd -g 999 volume
 RUN usermod -a -G volume appuser
 
 # Switching to a non-root user, please refer to https://aka.ms/vscode-docker-python-user-rights
